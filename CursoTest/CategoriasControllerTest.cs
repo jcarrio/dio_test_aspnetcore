@@ -28,7 +28,6 @@ namespace CursoTest
             _mockContext.Setup(m => m.Categorias.FindAsync(1))
                 .ReturnsAsync(_categoria);
 
-
             _mockContext.Setup(m => m.SetModified(_categoria));
 
             _mockContext.Setup(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()))
@@ -80,6 +79,5 @@ namespace CursoTest
             _mockContext.Verify(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()),
                 Times.Once());
         }
-
     }
 }
