@@ -52,7 +52,9 @@ namespace CursoAPI.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(produto).State = EntityState.Modified;
+            // seta o estado da entidade para modificado
+            // _context.Entry(produto).State = EntityState.Modified;
+            _context.SetModified(produto);
 
             try
             {
